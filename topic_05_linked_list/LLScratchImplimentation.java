@@ -1,9 +1,12 @@
-package topic_04_linked_list;
+package topic_05_linked_list;
+
 import java.util.LinkedList;
 import java.util.logging.Handler;
-// add first and add last operations of linkedlist
-public class Adding {
+
+// scratch implimentations of linkedlist
+public class LLScratchImplimentation {
     Node head;
+
     class Node {
         String data;
         Node next;
@@ -14,6 +17,7 @@ public class Adding {
             this.next = null;
         }
     }
+
     // add first
     public void addFirst(String data) {
         Node newNode = new Node(data);
@@ -25,6 +29,7 @@ public class Adding {
         newNode.next = head;
         head = newNode;
     }
+
     // add last
     public void addLast(String data) {
         Node newNode = new Node(data);
@@ -54,9 +59,10 @@ public class Adding {
         }
         System.out.println("null");
     }
+
     public static void main(String[] args) {
         // add first / last
-        Adding list = new Adding();
+        LLScratchImplimentation list = new LLScratchImplimentation();
         list.addFirst("is");
         list.addFirst("this");
         list.addLast("a");
