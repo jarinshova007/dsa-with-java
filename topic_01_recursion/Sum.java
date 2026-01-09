@@ -14,9 +14,9 @@ public class Sum {
      * sum += i;
      * return printSum(i + 1, n);
      * }
-
-     * // another way:
-     * /* return type int:
+     * 
+     * another way:
+     * return type int:
      * public static int printSum(int i, int n, int sum) {
      * if (i == n) {
      * sum += i;
