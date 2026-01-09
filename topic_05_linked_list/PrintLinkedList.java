@@ -1,9 +1,12 @@
-package topic_04_linked_list;
+package topic_05_linked_list;
 
 public class PrintLinkedList {
+    Node head;
+
     class Node {
         String data;
         Node next;
+
         // constructor
         Node(String data) {
             this.data = data;
@@ -25,8 +28,9 @@ public class PrintLinkedList {
         }
         System.out.println("null");
     }
-    public static void main (String args[]) {
+
+    public static void main(String args[]) {
         PrintLinkedList list = new PrintLinkedList();
-        
+
     }
 }
