@@ -40,7 +40,7 @@ public class Fibonacci {
     }
 
     // print fibonaccci series with recursive
-    public static void fiboRecursive(int i, int n) { // what if the return type is integer???
+    public static void fiboRecursive(int i, int n) {
         if (i == n) {
             System.out.println(fibonacci(i));
             return;
