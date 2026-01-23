@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.LinkedList;
 
+// LinkedList with collection fermwork
+
 /* ArrayList vs LinkedList
     time complexity:
     insert: O(n) > O(1)  // LinkedList is better than arrayList for manipulation
@@ -44,6 +46,8 @@ public class LinkedLists {
         System.out.println("null");
 
         // reverse
+        // Time complexity - O(n)
+        // Space complexity - O(1)
         Collections.reverse(list);
         System.out.println(list);
 

@@ -1,11 +1,15 @@
 package topic_05_linked_list;
 
-import java.util.LinkedList;
-import java.util.logging.Handler;
-
 // scratch implimentations of linkedlist
 public class LLScratchImplimentation {
+    // declaration of head node
     Node head;
+    private int size;
+
+    // constructor
+    LLScratchImplimentation() {
+        this.size = 0;
+    }
 
     class Node {
         String data;
@@ -15,12 +19,14 @@ public class LLScratchImplimentation {
         Node(String data) {
             this.data = data;
             this.next = null;
+            size++;
         }
     }
 
-    // add first
+    // addFirst
     public void addFirst(String data) {
         Node newNode = new Node(data);
+
         if (head == null) {
             head = newNode;
             return;
@@ -30,45 +36,95 @@ public class LLScratchImplimentation {
         head = newNode;
     }
 
-    // add last
-    public void addLast(String data) {
-        Node newNode = new Node(data);
+    // removeFirst
+    public void removeFirst() {
         if (head == null) {
-            newNode = head;
             return;
         }
-        // traverse
-        Node currentNode = head;
-        while (currentNode.next != null) {
-            currentNode = currentNode.next;
-        }
-        currentNode.next = newNode;
+
+        size--;
+
+        head = head.next;
     }
 
-    // print linked list
+    // addlast
+    public void addlast(String data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node lastNode = head;
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
+        }
+        lastNode.next = newNode;
+    }
+
+    // print linkedList
     public void printList() {
         if (head == null) {
-            System.out.println("List is empty!");
+            System.out.println("This list is empty!");
             return;
         }
 
-        Node currentNode = head;
-        while (currentNode != null) {
-            System.out.print(currentNode + "-->");
-            currentNode = currentNode.next;
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
         }
         System.out.println("null");
     }
 
-    public static void main(String[] args) {
-        // add first / last
-        LLScratchImplimentation list = new LLScratchImplimentation();
-        list.addFirst("is");
-        list.addFirst("this");
-        list.addLast("a");
-        list.addLast("linked list");
+    // removeLast
+    public void removeLast() {
+        if (head == null) {
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            return;
+        }
 
-        // print
+        size--;
+
+        Node secondLastNode = head;
+        Node lastNode = head.next;
+        while (lastNode.next != null) {
+            secondLastNode = lastNode;
+            lastNode = lastNode.next;
+        }
+        secondLastNode.next = null;
+    }
+
+    // size
+    public int size() {
+        return size;
+    }
+
+    public static void main(String[] args) {
+        LLScratchImplimentation list = new LLScratchImplimentation();
+
+        // addFirst & addLast
+        list.addFirst("is");
+        list.addlast("a");
+        list.addFirst("this");
+        list.addlast("linked");
+        list.addlast("list");
+
+        // printList
         list.printList();
+
+        // removeFirst
+        list.removeFirst();
+        list.printList();
+
+        // removeLast
+        list.removeLast();
+        list.printList();
+
+        // print size
+        System.out.println("size of the list: " + list.size());
     }
 }
