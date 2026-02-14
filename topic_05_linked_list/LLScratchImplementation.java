@@ -1,13 +1,13 @@
 package topic_05_linked_list;
 
-// scratch implimentations of linkedlist
-public class LLScratchImplimentation {
+// scratch implementations of linked list
+public class LLScratchImplementation {
     // declaration of head node
     Node head;
     private int size;
 
     // constructor
-    LLScratchImplimentation() {
+    LLScratchImplementation() {
         this.size = 0;
     }
 
@@ -47,7 +47,7 @@ public class LLScratchImplimentation {
         head = head.next;
     }
 
-    // addlast
+    // addLast
     public void addlast(String data) {
         Node newNode = new Node(data);
 
@@ -104,7 +104,7 @@ public class LLScratchImplimentation {
     }
 
     public static void main(String[] args) {
-        LLScratchImplimentation list = new LLScratchImplimentation();
+        LLScratchImplementation list = new LLScratchImplementation();
 
         // addFirst & addLast
         list.addFirst("is");

@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.LinkedList;
 
-// LinkedList with collection fermwork
+// LinkedList with collection framework
 
 /* ArrayList vs LinkedList
     time complexity:
@@ -15,6 +15,13 @@ public class LinkedLists {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         LinkedList<String> list = new LinkedList<>();
+
+        // taking input for all items:
+        // int size = 5;
+        // taking input:
+        // for (int i = 0; i < size; i++) {
+        // list.add(sc.nextLine());
+        // }
 
         // add items
         list.add("LIST");
@@ -48,6 +55,20 @@ public class LinkedLists {
         // reverse
         // Time complexity - O(n)
         // Space complexity - O(1)
+
+        // before reversing we can copy the list in a new list and reverse the new list,
+        // so that our list will remain the same:
+        // create a new list and copy items:
+        // LinkedList<String> newList = new LinkedList<>();
+
+        // int sizeOfNewList = list.size();
+
+        // for (int i = 0; i < sizeOfNewList; i++) {
+        // newList.addLast(list.get(i));
+        // }
+
+        // Collections.reverse(newList);
+
         Collections.reverse(list);
         System.out.println(list);
 

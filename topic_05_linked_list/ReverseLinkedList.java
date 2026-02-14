@@ -60,10 +60,10 @@ public class ReverseLinkedList {
             return;
         }
 
-        Node currentNode = head;
-        while (currentNode != null) {
-            System.out.print(currentNode.data + " -> ");
-            currentNode = currentNode.next;
+        Node currNode = head;
+        while (currNode != null) {
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
         }
         System.out.println("null");
     }
@@ -90,7 +90,7 @@ public class ReverseLinkedList {
             prevNode = currNode;
             currNode = nextNode;
         }
-        head.next = null; // cutting the prevNode to currNode connection
+        head.next = null; // cutting the prevNode to currNode connection (at the beginning)
         head = prevNode; // new head is the last node because at the end current node is null
     }
 
