@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.LinkedList;
 
-// LinkedList with collection framework
+// LinkedList with java collection framework
 
 /* ArrayList vs LinkedList
     time complexity:
