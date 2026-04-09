@@ -48,7 +48,7 @@ public class LLScratchImplementation {
     }
 
     // addLast
-    public void addlast(String data) {
+    public void addLast(String data) {
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -108,10 +108,10 @@ public class LLScratchImplementation {
 
         // addFirst & addLast
         list.addFirst("is");
-        list.addlast("a");
+        list.addLast("a");
         list.addFirst("this");
-        list.addlast("linked");
-        list.addlast("list");
+        list.addLast("linked");
+        list.addLast("list");
 
         // printList
         list.printList();

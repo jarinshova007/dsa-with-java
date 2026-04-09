@@ -1,11 +1,11 @@
-package topic_06_stack;
 
 // implement a stack with collection framework
+// time complexity for push, pop and peek -> O(1)
 import java.util.Stack;
 
 public class StackJCF {
     public static void main(String[] args) {
-        Stack s = new Stack();
+        Stack<Integer> s = new Stack<>();
 
         s.push(1);
         s.push(2);

@@ -11,7 +11,7 @@ import java.util.LinkedList;
     insert: O(n) > O(1)  // LinkedList is better than arrayList for manipulation
     search: O(1) < O(n)  // ArrayList is better than LinkedList for search
  */
-public class LinkedLists {
+public class LinkedListsJCF {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         LinkedList<String> list = new LinkedList<>();

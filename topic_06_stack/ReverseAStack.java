@@ -1,52 +1,66 @@
-package topic_06_stack;
-
 import java.util.Stack;
 
+// reverse a stack
 public class ReverseAStack {
-
-    // reverseIterate
-    public static void reverseIterate(Stack<Integer> s) {
-        Stack<Integer> newStack = new Stack<>();
-
-        // copy element
-        while (!s.isEmpty()) {
-            newStack.push(s.pop());
+    // push at bottom
+    public static void pushAtBottom(Stack<Integer> s, int data) {
+        if (s.isEmpty()) {
+            s.push(data);
+            return;
         }
 
-        // print
-        while (!newStack.isEmpty()) {
-            System.out.println(newStack.peek());
-            newStack.pop();
-        }
+        int temp = s.pop();
+        pushAtBottom(s, data);
+        s.push(temp);
     }
 
     // reverseRecursive
     public static void reverseRecursive(Stack<Integer> s) {
         if (s.isEmpty()) {
-            System.out.println("Empty stack!");
             return;
         }
+
         int top = s.pop();
         reverseRecursive(s);
-        s.push(top);
+        pushAtBottom(s, top);
+    }
+
+    // reverseIterate
+    public static Stack<Integer> reverseIterate(Stack<Integer> s) {
+        Stack<Integer> newStack = new Stack<>();
+
+        if (s.isEmpty()) {
+            return s;
+        }
+
+        while (!s.isEmpty()) {
+            newStack.push(s.pop());
+        }
+        return newStack;
     }
 
     public static void main(String[] args) {
-        // classical approach
         Stack<Integer> s = new Stack<>();
-        // Stack<Integer> newStack = new Stack<>();
-
         s.push(1);
         s.push(2);
         s.push(3);
         s.push(4);
+        s.push(5);
 
-        // call reverseIterate
-        // reverseIterate(s);
+        // reverse recursive call
+        reverseRecursive(s); // 1, 2, 3, 4, 5
 
-        reverseRecursive(s);
+        // // print
+        // while (!s.isEmpty()) {
+        // System.out.println(s.peek());
+        // s.pop();
+        // }
 
-        // print
+        System.out.println();
+
+        // reverse iterate call
+        s = reverseIterate(s); // 5, 4, 3, 2, 1
+
         while (!s.isEmpty()) {
             System.out.println(s.peek());
             s.pop();

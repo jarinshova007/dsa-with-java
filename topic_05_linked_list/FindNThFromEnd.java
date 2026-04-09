@@ -1,6 +1,9 @@
 package topic_05_linked_list;
 // Find the nth node from end
 
+// Time complexity - O(n)
+// Space complexity - O(1)
+
 public class FindNThFromEnd {
 
     private int size;

@@ -1,4 +1,3 @@
-package topic_06_stack;
 // Stack with Linked List
 
 public class StackLL {
@@ -23,7 +22,7 @@ public class StackLL {
             return head == null;
         }
 
-        // push
+        // push -> O(1)
         public void push(int data) {
             Node newNode = new Node(data);
 
@@ -31,7 +30,7 @@ public class StackLL {
             head = newNode;
         }
 
-        // pop
+        // pop -> O(1)
         public int pop() {
             if (isEmpty()) {
                 return -1;
@@ -42,7 +41,7 @@ public class StackLL {
             return top.data;
         }
 
-        // peek
+        // peek -> O(1)
         public int peek() {
             if (isEmpty()) {
                 return -1;
