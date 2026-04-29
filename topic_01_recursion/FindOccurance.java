@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class FindOccurance {
     static int first = -1;
     static int last = -1;
-    public static void findOccurance(String str, char element, int idx)  {
+
+    public static void findOccurance(String str, char element, int idx) {
         if (idx == str.length()) {
             System.out.println("first: " + first + "\n" + "last: " + last);
         }
@@ -19,6 +20,7 @@ public class FindOccurance {
         }
         findOccurance(str, element, idx++);
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();

@@ -11,7 +11,7 @@ public class MoveAllX {
 
         char current = str.charAt(idx);
         if (current == 'x') {
-            //moveAllX(str, idx + 1, newStr, count + 1);
+            // moveAllX(str, idx + 1, newStr, count + 1);
             count++;
             moveAllX(str, idx + 1, newStr, count);
         } else {
@@ -20,6 +20,22 @@ public class MoveAllX {
             moveAllX(str, idx + 1, newStr + current, count);
         }
     }
+
+    // in a different way
+    // public static void moveAllTheX(String str, int idx, String newStr, String
+    // extra) {
+    // if (idx == str.length()) {
+    // System.out.println(newStr + extra);
+    // return;
+    // }
+    // char currChar = str.charAt(idx);
+    // if (currChar == 'x') {
+    // moveAllTheX(str, idx + 1, newStr, extra + currChar);
+    // } else {
+    // moveAllTheX(str, idx + 1, newStr + currChar, extra);
+    // }
+    // }
+
     public static void main(String[] args) {
         String str = "xRxexmxxi"; // Remixxxxx
 

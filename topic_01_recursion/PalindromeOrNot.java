@@ -14,6 +14,20 @@ public class PalindromeOrNot {
             return;
         }
     }
+
+    // in a different way
+    public static boolean isPalindrome(String str, int idx) {
+        if (idx == str.length() / 2) {
+            return true;
+        }
+        char right = str.charAt(idx);
+        char left = str.charAt(str.length() - idx - 1);
+        if (right == left) {
+            return isPalindrome(str, idx + 1);
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         String str = "level";
         palindromeOrNot(str, 0);
