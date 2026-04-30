@@ -98,6 +98,28 @@ public class LLScratchImplementation {
         secondLastNode.next = null;
     }
 
+    // // removeLast in a different way
+    // public void removeLast() {
+    // if (isEmpty()) {
+    // System.out.println("empty list");
+    // return;
+    // }
+
+    // if (head.next == null) {
+    // head = null;
+    // return;
+    // }
+
+    // size--;
+
+    // Node secondLastNode = head;
+    // while (secondLastNode.next.next != null) {
+    // secondLastNode = secondLastNode.next;
+    // }
+
+    // secondLastNode.next = null;
+    // }
+
     // size
     public int size() {
         return size;
