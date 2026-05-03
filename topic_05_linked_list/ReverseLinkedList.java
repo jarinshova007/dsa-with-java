@@ -111,9 +111,7 @@ public class ReverseLinkedList {
     // Time complexity - O(n)
     // Space complexity - O(n)
     public void reverseUsingExtraSpace() {
-        if (head == null || head.next == null) {
-            return;
-        }
+        // no base case needed
         ReverseLinkedList newList = new ReverseLinkedList();
 
         Node currNode = head;
