@@ -1,7 +1,7 @@
 package topic_07_queue;
 
 import java.util.Queue;
-import java.util.LinkedList;
+// import java.util.LinkedList;
 import java.util.ArrayDeque;
 
 public class QueueJCF {

@@ -19,7 +19,6 @@ public class LLScratchImplementation {
         Node(String data) {
             this.data = data;
             this.next = null;
-            size++;
         }
     }
 
@@ -34,6 +33,7 @@ public class LLScratchImplementation {
 
         newNode.next = head;
         head = newNode;
+        size++;
     }
 
     // removeFirst
@@ -60,6 +60,7 @@ public class LLScratchImplementation {
             lastNode = lastNode.next;
         }
         lastNode.next = newNode;
+        size++;
     }
 
     // print linkedList

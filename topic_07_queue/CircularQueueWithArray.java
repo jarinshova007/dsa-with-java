@@ -15,7 +15,7 @@ public class CircularQueueWithArray {
 
         // isEmpty
         public boolean isEmpty() {
-            return front == -1 & rear == -1;
+            return front == -1 && rear == -1;
         }
 
         // isFull
@@ -34,7 +34,8 @@ public class CircularQueueWithArray {
                 front = 0;
             }
 
-            arr[(rear + 1) % size] = data;
+            rear = (rear + 1) % size;
+            arr[rear] = data;
         }
 
         // dequeue -> O(1)
@@ -46,8 +47,8 @@ public class CircularQueueWithArray {
 
             // single element
             if (front == rear) {
-                front--;
-                rear--;
+                front = -1;
+                rear = -1;
             } else {
                 front = (front + 1) % size;
             }

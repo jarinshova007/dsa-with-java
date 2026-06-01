@@ -1,13 +1,13 @@
-
 public class StackWithArray {
-    // stack Array
-
-    static int size = 5;
-
     static class Stack {
+        int size;
+        int arr[];
         int top = -1;
 
-        int arr[] = new int[size];
+        Stack(int size) {
+            this.size = size;
+            this.arr = new int[size];
+        }
 
         // isEmpty
         public boolean isEmpty() {
@@ -22,18 +22,17 @@ public class StackWithArray {
         // push
         public void push(int data) {
             if (isFull()) {
-                System.out.println("Stack Overflow! Cannot push " + data);
+                System.out.println("Stack is full! Cannot push " + data);
                 return;
             }
 
-            top = top + 1;
-            arr[top] = data; // or arr[++top] = data;
+            arr[++top] = data;
         }
 
         // peek
         public int peek() {
             if (isEmpty()) {
-                System.out.println("Stack underflow!");
+                System.out.println("Stack is empty!");
                 return -1;
             }
 
@@ -43,29 +42,31 @@ public class StackWithArray {
         // pop
         public int pop() {
             if (isEmpty()) {
-                System.out.println("Stack underflow!");
+                System.out.println("Stack is empty!");
                 return -1;
             }
 
-            int topElement = arr[top];
-            top--;
-            return topElement; // or return arr[top--];
+            return arr[top--];
         }
     }
 
     public static void main(String[] args) {
-        Stack s = new Stack();
+        Stack s = new Stack(5);
 
-        s.pop(); // underflow
-        s.push(5);
-        s.push(4);
-        s.push(3);
-        s.push(2);
+        // push
         s.push(1);
-        s.push(12); // overflow
+        s.push(2);
+        s.push(3);
+        s.push(4);
+        s.push(5);
+        s.push(10);
+        s.push(11);
 
+        System.out.println();
+
+        // print
         while (!s.isEmpty()) {
-            System.out.println(s.peek()); // 1, 2, 3, 4, 5
+            System.out.println(s.peek());
             s.pop();
         }
     }
