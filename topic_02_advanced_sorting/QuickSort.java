@@ -1,7 +1,7 @@
 package topic_02_advanced_sorting;
 
 // worst case - O(n^2)
-// Average case 0 O(nlogn)
+// Average case - O(nlogn)
 // mostly used in average case and when memory efficiency is a concern
 public class QuickSort {
     // partition
