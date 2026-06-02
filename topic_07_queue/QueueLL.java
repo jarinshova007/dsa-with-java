@@ -16,29 +16,25 @@ public class QueueLL {
         Node head = null;
         Node tail = null;
 
-        // isEmpty
+        // isEmpty - O(1)
         public boolean isEmpty() {
-            return head == null & tail == null;
+            return head == null && tail == null;
         }
 
-        // push
+        // push - O(1)
         public void push(int data) {
             Node newNode = new Node(data);
 
             if (isEmpty()) {
-                head = newNode;
+                head = tail = newNode;
                 return;
             }
 
-            Node currNode = head;
-            while (currNode.next != null) {
-                currNode = currNode.next;
-            }
-
-            currNode.next = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
 
-        // peek
+        // peek - O(1)
         public int peek() {
             if (isEmpty()) {
                 System.out.println("Empty queue");
@@ -48,7 +44,7 @@ public class QueueLL {
             return head.data;
         }
 
-        // pop
+        // pop - O(1)
         public int pop() {
             if (isEmpty()) {
                 System.out.println("Empty queue!");
@@ -56,7 +52,13 @@ public class QueueLL {
             }
 
             int front = head.data;
-            head = head.next;
+
+            if (head == tail) { // for only one element
+                head = tail = null;
+            } else {
+                head = head.next;
+            }
+
             return front;
         }
     }
