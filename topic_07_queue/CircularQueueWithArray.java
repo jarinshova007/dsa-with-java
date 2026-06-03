@@ -26,10 +26,11 @@ public class CircularQueueWithArray {
         // enqueue -> O(1)
         public void add(int data) {
             if (isFull()) {
-                System.out.println("The queue is full, can't add " + data);
+                System.out.println("overflow!");
                 return;
             }
 
+            // if it is the first element
             if (front == -1) {
                 front = 0;
             }
@@ -45,15 +46,16 @@ public class CircularQueueWithArray {
                 return -1;
             }
 
+            int frontData = arr[front];
+
             // single element
             if (front == rear) {
-                front = -1;
-                rear = -1;
+                front = rear = -1;
             } else {
                 front = (front + 1) % size;
             }
 
-            return arr[front++];
+            return frontData;
         }
 
         // peek
@@ -68,16 +70,17 @@ public class CircularQueueWithArray {
     }
 
     public static void main(String[] args) {
-        Queue q = new Queue(3);
+        Queue q = new Queue(4);
         q.add(1);
         q.add(2);
         q.add(3);
-        q.add(4); // no space
-        q.remove();
+        q.add(4);
+        System.out.println(q.remove() + " is removed");
+        System.out.println(q.remove() + " is removed");
         q.add(5);
-        q.add(6); // no space;
+        q.add(6);
 
-        // 2, 3, 5
+        // 3 4 5 6
         while (!q.isEmpty()) {
             System.out.println(q.peek());
             q.remove();
