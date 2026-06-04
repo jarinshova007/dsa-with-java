@@ -32,7 +32,7 @@ public class QueueWithArray {
             arr[++rear] = data;
         }
 
-        // peek -> O(n)
+        // peek -> O(1)
         public int peek() {
             if (isEmpty()) {
                 System.out.println("Empty Queue!");
@@ -66,10 +66,11 @@ public class QueueWithArray {
         q.add(3);
         q.add(4);
         q.add(5);
+        q.remove();
         q.add(6);
         q.add(7);
 
-        // 1 2 3 4 5
+        // 2 3 4 5 6
         while (!q.isEmpty()) {
             System.out.println(q.peek());
             q.remove();

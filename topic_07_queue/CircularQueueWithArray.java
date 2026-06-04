@@ -58,7 +58,7 @@ public class CircularQueueWithArray {
             return frontData;
         }
 
-        // peek
+        // peek - O(1)
         public int peek() {
             if (isEmpty()) {
                 System.out.println("Empty Queue!");
