@@ -1,4 +1,5 @@
 package topic_07_queue;
+// Linear queue with array (by shifting elements)
 
 public class QueueWithArray {
     static class Queue {
