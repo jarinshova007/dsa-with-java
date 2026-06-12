@@ -1,4 +1,5 @@
 package topic_07_queue;
+// Linear queue with array (no shifting)
 
 public class QueueWithArrayNoShifting {
     static class Queue {
