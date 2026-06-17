@@ -72,7 +72,7 @@ public class LevelOrderTraversal {
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
 
-        // level order method call
+        // levelOrder method call
         levelOrder(root);
     }
 }
