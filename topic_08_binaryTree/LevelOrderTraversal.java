@@ -46,11 +46,12 @@ public class LevelOrderTraversal {
 
         while (!q.isEmpty()) {
             Node currNode = q.remove();
+
             if (currNode == null) {
-                System.out.println();
                 if (q.isEmpty()) {
                     break;
                 } else {
+                    System.out.println();
                     q.add(currNode);
                 }
             } else {
