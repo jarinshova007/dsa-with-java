@@ -1,5 +1,5 @@
 package topic_08_binaryTree;
-// build tree with preorder + null and count the number of nodes
+// Build a tree using preorder traversal with null values and count the number of nodes
 
 public class CountOfNodes {
     static class Node {

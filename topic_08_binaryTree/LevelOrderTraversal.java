@@ -1,5 +1,5 @@
 package topic_08_binaryTree;
-// build tree with preorder + null and traverse level wise
+// Build a tree using preorder traversal with null values and traverse level wise
 
 import java.util.Queue;
 import java.util.LinkedList;
