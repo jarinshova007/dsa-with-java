@@ -1,6 +1,6 @@
 package topic_08_binaryTree;
-// Build a tree using preorder traversal with null values and count the number of nodes
 
+// Build a tree using preorder traversal with null markers and count the number of nodes
 public class CountOfNodes {
     static class Node {
         int data;
@@ -32,6 +32,10 @@ public class CountOfNodes {
         }
     }
 
+    // Time Complexity: O(n)
+    // Space Complexity: O(h)
+    // where n = number of nodes and h = height of the tree = maximum recursion
+    // stack depth
     public static int countOfNodes(Node root) {
         if (root == null) {
             return 0;

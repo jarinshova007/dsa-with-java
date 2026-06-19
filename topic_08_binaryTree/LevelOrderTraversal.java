@@ -1,5 +1,5 @@
 package topic_08_binaryTree;
-// Build a tree using preorder traversal with null values and traverse level wise
+// Build tree using preorder + null markers and perform level order traversal (BFS)
 
 import java.util.Queue;
 import java.util.LinkedList;
@@ -35,6 +35,10 @@ public class LevelOrderTraversal {
         }
     }
 
+    // Level Order Traversal (BFS)
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+    // where n = number of nodes in the tree
     public static void levelOrder(Node root) {
         if (root == null) {
             return;
