@@ -33,18 +33,6 @@ public class BuildATreeWithPostorderAndNull {
         }
     }
 
-    // postorder - O(n)
-    public static void postorder(Node root) {
-        if (root == null) {
-            System.out.print(-1 + " ");
-            return;
-        }
-
-        postorder(root.left);
-        postorder(root.right);
-        System.out.print(root.data + " "); // add a new line to print the data as it is
-    }
-
     public static void main(String[] args) {
         int nodes[] = {
                 -1, -1, 4,
@@ -54,13 +42,10 @@ public class BuildATreeWithPostorderAndNull {
                 1
         };
 
-        // int nodes[] = { -1, -1, 4, -1, -1, 5, 2, -1, -1, -1, 6, 3, 1 };
-
         BinaryTree tree = new BinaryTree();
         idx = nodes.length;
         Node root = tree.buildTree(nodes);
 
         System.out.println("root = " + root.data); // root = 1;
-        postorder(root); // 4, 5, 2, 3, 1
     }
 }

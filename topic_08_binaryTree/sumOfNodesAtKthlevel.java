@@ -1,6 +1,6 @@
 package topic_08_binaryTree;
 
-public class DiameterOfTree1 {
+public class sumOfNodesAtKthlevel {
     static class Node {
         int data;
         Node left;
@@ -18,6 +18,7 @@ public class DiameterOfTree1 {
     static class BinaryTree {
         public Node buildTree(int nodes[]) {
             idx--;
+
             if (nodes[idx] == -1) {
                 return null;
             }
@@ -30,41 +31,30 @@ public class DiameterOfTree1 {
         }
     }
 
-    // height of a tree
-    public static int height(Node root) {
+    // Time Complexity: O(n)
+    public static int sumOfNodesAtKthLevel(Node root, int k) {
         if (root == null) {
             return 0;
         }
 
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-        int myHeight = Math.max(leftHeight, rightHeight) + 1;
-
-        return myHeight;
-    }
-
-    // diameter - O(N^2)
-    public static int diameter(Node root) {
-        if (root == null) {
-            return 0;
+        if (k == 1) {
+            return root.data;
         }
 
-        int diam1 = diameter(root.left);
-        int diam2 = diameter(root.right);
-        int diam3 = height(root.left) + height(root.right) + 1;
+        int leftSum = sumOfNodesAtKthLevel(root.left, k - 1);
+        int rightSum = sumOfNodesAtKthLevel(root.right, k - 1);
 
-        return Math.max(Math.max(diam1, diam2), diam3);
+        return leftSum + rightSum;
     }
 
     public static void main(String[] args) {
         int nodes[] = { -1, -1, 4, -1, -1, 5, 2, -1, -1, 6, -1, -1, 7, 3, 1 };
 
-        idx = nodes.length;
-
         BinaryTree tree = new BinaryTree();
+        idx = nodes.length;
         Node root = tree.buildTree(nodes);
 
-        // method call
-        System.out.println("diameter = " + diameter(root)); // 5
+        int x = sumOfNodesAtKthLevel(root, 3);
+        System.out.println(x);
     }
 }

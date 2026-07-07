@@ -1,6 +1,6 @@
 package topic_08_binaryTree;
 
-public class DiameterOfTree1 {
+public class PreAndInAndPostorderTraversal {
     static class Node {
         int data;
         Node left;
@@ -18,6 +18,7 @@ public class DiameterOfTree1 {
     static class BinaryTree {
         public Node buildTree(int nodes[]) {
             idx--;
+
             if (nodes[idx] == -1) {
                 return null;
             }
@@ -30,41 +31,52 @@ public class DiameterOfTree1 {
         }
     }
 
-    // height of a tree
-    public static int height(Node root) {
+    // preorder - O(n)
+    public static void preorder(Node root) {
         if (root == null) {
-            return 0;
+            return;
         }
 
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-        int myHeight = Math.max(leftHeight, rightHeight) + 1;
-
-        return myHeight;
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
     }
 
-    // diameter - O(N^2)
-    public static int diameter(Node root) {
+    // inorder - O(n)
+    public static void inorder(Node root) {
         if (root == null) {
-            return 0;
+            return;
         }
 
-        int diam1 = diameter(root.left);
-        int diam2 = diameter(root.right);
-        int diam3 = height(root.left) + height(root.right) + 1;
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
+    }
 
-        return Math.max(Math.max(diam1, diam2), diam3);
+    // postorder - O(n)
+    public static void postorder(Node root) {
+        if (root == null) {
+            System.out.print(-1 + " "); // prints the null nodes
+            return;
+        }
+
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data + " "); // add a new line to print the data as it is
     }
 
     public static void main(String[] args) {
         int nodes[] = { -1, -1, 4, -1, -1, 5, 2, -1, -1, 6, -1, -1, 7, 3, 1 };
 
-        idx = nodes.length;
-
         BinaryTree tree = new BinaryTree();
+        idx = nodes.length;
         Node root = tree.buildTree(nodes);
 
         // method call
-        System.out.println("diameter = " + diameter(root)); // 5
+        preorder(root);
+        System.out.println();
+        inorder(root);
+        System.out.println();
+        postorder(root);
     }
 }
