@@ -1,5 +1,3 @@
-package topic_09_BST;
-
 public class DeleteANode {
     static class Node {
         int data;
