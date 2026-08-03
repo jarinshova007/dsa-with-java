@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class CountSort {
     // Overall Time Complexity: O(n + k)
     // Overall Space Complexity: O(n + k)
+    // here, n = size of arr and k = size of count array
     public static void countSort(int arr[]) {
         int max = arr[0];
         for (int i = 0; i < arr.length; i++) {
@@ -12,7 +13,8 @@ public class CountSort {
         }
 
         // create a new array
-        int count[] = new int[max + 1];
+        int k = max + 1;
+        int count[] = new int[k];
 
         // Initialize all indices to 0 (it's optional for java as new int[] sets 0 to
         // every index automatically)
@@ -27,7 +29,7 @@ public class CountSort {
         }
 
         // cumulative frequency array (prefix sum) of count
-        for (int i = 1; i < count.length; i++) {
+        for (int i = 1; i < k; i++) {
             // count[i] = count[i] + count[i - 1];
             count[i] += count[i - 1];
         }
