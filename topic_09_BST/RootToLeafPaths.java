@@ -48,6 +48,8 @@ public class RootToLeafPaths {
         System.out.println();
     }
 
+    // Time Complexity = O(N) where N = number of nodes
+    // Space Complexity = O(H) where H = height of the tree
     public static void rootToLeaf(Node root, ArrayList<Integer> path) {
         if (root == null) {
             return;
