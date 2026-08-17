@@ -28,6 +28,7 @@ public class LLScratchImplementation {
 
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
 
@@ -42,9 +43,8 @@ public class LLScratchImplementation {
             return;
         }
 
-        size--;
-
         head = head.next;
+        size--;
     }
 
     // addLast
@@ -53,8 +53,10 @@ public class LLScratchImplementation {
 
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
+
         Node lastNode = head;
         while (lastNode.next != null) {
             lastNode = lastNode.next;
@@ -85,10 +87,9 @@ public class LLScratchImplementation {
         }
         if (head.next == null) {
             head = null;
+            size--;
             return;
         }
-
-        size--;
 
         Node secondLastNode = head;
         Node lastNode = head.next;
@@ -97,9 +98,10 @@ public class LLScratchImplementation {
             lastNode = lastNode.next;
         }
         secondLastNode.next = null;
+        size--;
     }
 
-    // // removeLast in a different way
+    // removeLast in a different way
     // public void removeLast() {
     // if (isEmpty()) {
     // System.out.println("empty list");
@@ -108,10 +110,9 @@ public class LLScratchImplementation {
 
     // if (head.next == null) {
     // head = null;
+    // size--;
     // return;
     // }
-
-    // size--;
 
     // Node secondLastNode = head;
     // while (secondLastNode.next.next != null) {
@@ -119,6 +120,7 @@ public class LLScratchImplementation {
     // }
 
     // secondLastNode.next = null;
+    // size--;
     // }
 
     // size
